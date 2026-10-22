@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Khám phá 12 điểm đến Việt Nam với lịch trình 3 ngày 2 đêm, món ngon và bản đồ gợi ý.">
+  <title>Đi Đâu Việt Nam — 12 hành trình đáng nhớ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+:root{--ink:#14241f;--muted:#66736d;--cream:#f6f7f1;--orange:#fa6940;--mint:#d9f2db;--line:#e3e8de}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'Be Vietnam Pro',sans-serif;font-size:14px;line-height:1.65}button,input,select{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}.wrap{max-width:1210px;margin:auto;padding:0 24px}header{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.6px}.brand-mark{display:grid;place-items:center;background:#13211d;color:#c5ee58;width:36px;height:36px;border-radius:11px;font-size:20px}nav{display:flex;align-items:center;gap:30px;font-weight:700;font-size:12px}nav a:hover{color:var(--orange)}.btn-dark{background:#17211d;color:white;padding:12px 20px;border-radius:13px}.hero{position:relative;min-height:675px;border-radius:30px;overflow:hidden;color:#fff;background:linear-gradient(90deg,rgba(1,23,25,.83),rgba(6,33,38,.31) 75%),url('https://cdn.hanoivoyage.com/uploads/Blogs/Vietnam/Phu-Quoc/phu-quoc-bai-sao-beach-02.jpg') center/cover}.hero-content{position:relative;padding:62px 58px 210px;max-width:870px}.eyebrow{display:inline-block;border:1px solid #ffffff7c;border-radius:40px;padding:7px 13px;font-size:11px;letter-spacing:1.7px;font-weight:800;text-transform:uppercase}.hero h1,.display{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;font-weight:900;line-height:.96;letter-spacing:-1px}.hero h1{font-size:clamp(72px,9vw,128px);margin:20px 0}.hero h1 span{color:#c9f16a}.hero p{font-size:16px;max-width:565px;color:#f1f5ef;margin:0}.planner{position:absolute;bottom:30px;left:58px;right:58px;border:6px solid #ffffff60;border-radius:22px;background:white;color:var(--ink);box-shadow:0 16px 40px #0003;overflow:hidden}.tabs{display:grid;grid-template-columns:repeat(2,1fr);background:#eef0ec;padding:7px;gap:7px}.tab{border:0;background:transparent;padding:13px;border-radius:12px;font-weight:800;color:#606b64}.tab.active{background:#15221d;color:white}.form-grid{display:grid;grid-template-columns:1.1fr 1.3fr 1fr auto;gap:10px;padding:13px}.form-grid.route-form{grid-template-columns:1.3fr 1fr auto}.form-grid>*{min-width:0}.form-grid select,.form-grid input{border:1px solid #e0e4de;background:#fafbf8;border-radius:12px;padding:14px;color:var(--ink);outline:none;width:100%}.form-grid button,.primary{border:0;background:var(--orange);color:#fff;border-radius:12px;padding:13px 21px;font-weight:800}.form-grid button:hover,.primary:hover{background:#e5532e}.stats{display:grid;grid-template-columns:repeat(3,1fr);margin:24px 0 88px;background:white;border:1px solid var(--line);border-radius:24px;overflow:hidden}.stat{padding:24px 30px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{display:block;font-family:'Barlow Condensed';font-size:43px;line-height:1;font-weight:800}.stat small{color:var(--muted)}section{scroll-margin-top:25px}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:28px}.kicker{font-size:12px;letter-spacing:2px;font-weight:800;color:#c55939;text-transform:uppercase}.display{font-size:clamp(48px,6vw,82px);margin:9px 0 0}.section-head p{max-width:390px;color:var(--muted);font-size:14px}.intro{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:100px}.feature{min-height:300px;border-radius:25px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.feature.one{background:#dcefe0}.feature.two{background:#1d3b35;color:white}.feature .num{font-family:'Barlow Condensed';font-size:68px;line-height:1;opacity:.27}.feature h3{font-size:25px;line-height:1.25;margin:12px 0}.feature p{max-width:420px;opacity:.78}.arrow{align-self:flex-end;font-size:28px}.days-switch{display:flex;gap:10px;margin:22px 0 24px;flex-wrap:wrap}.day-btn{border:1px solid #dce1d8;background:white;border-radius:14px;padding:12px 22px;font-weight:800}.day-btn.active{background:#172b25;color:white;border-color:#172b25}.day-overview{display:grid;grid-template-columns:1.15fr .85fr;background:#e8eee4;border-radius:25px;overflow:hidden;margin-bottom:30px;min-height:270px}.day-visual{background-position:center;background-size:cover;min-height:260px}.day-copy{padding:30px 36px;display:flex;flex-direction:column;justify-content:center}.day-copy h3{font-size:31px;line-height:1.22;margin:8px 0 12px}.day-copy p{color:#56665e}.timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.stop{display:grid;grid-template-columns:76px 1fr;gap:12px;padding:23px;background:white;border:1px solid var(--line);border-radius:19px}.stop .time{font-family:'Barlow Condensed';font-weight:800;font-size:24px;color:#dd6746;line-height:1.3}.stop h4{font-size:15px;margin:0 0 7px}.stop p{font-size:12px;color:#62716a;margin:0 0 12px}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{font-size:10px;border-radius:7px;background:#eef2e9;padding:5px 9px;color:#47584f;font-weight:700}.stop .loc{color:#25715c;font-size:11px;font-weight:700;display:inline-block;margin-top:9px}.stop .loc:hover{text-decoration:underline}.note{background:#fff4e7;border-left:4px solid #e99e51;padding:16px 20px;border-radius:12px;color:#7b5a31;font-size:12px;margin-top:20px}.destinations{margin:100px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.dest-card{position:relative;height:360px;border:0;border-radius:21px;overflow:hidden;display:flex;flex-direction:column;justify-content:end;text-align:left;color:white;padding:25px;background-position:center;background-size:cover;transition:transform .2s}.dest-card:hover{transform:translateY(-4px)}.dest-card:before{content:'';position:absolute;inset:0;background:linear-gradient(transparent 30%,#071917da)}.dest-card>*{z-index:1}.dest-card small{font-size:11px;font-weight:800;letter-spacing:1px}.dest-card strong{font-family:'Barlow Condensed';font-weight:800;font-size:40px;line-height:1.1}.dest-card span{font-size:12px}.finder{background:#173a33;color:white;border-radius:28px;padding:35px;margin-bottom:90px}.finder .section-head p{color:#bfd2c8}.finder-controls{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;margin-bottom:22px}.finder select,.finder input{border:1px solid #668079;background:#f6f8f4;border-radius:11px;padding:13px;min-width:0;width:100%}.results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.result{background:#fff;color:#21342b;padding:19px;border-radius:15px}.result strong{display:block;font-size:15px}.result p{font-size:11px;color:#617068;margin:8px 0}.result .price{font-weight:800;color:#d45e3b}.result small{color:#5b6a62}.result a{display:inline-block;margin-top:10px;color:#0c725b;font-size:11px;font-weight:800}.no-result{grid-column:1/-1;color:#fff}.map-section{margin-bottom:90px}.map-layout{display:grid;grid-template-columns:1fr 340px;gap:17px}.map{height:485px;border-radius:23px;background:#dce8df;z-index:0}.map-list{background:white;border:1px solid var(--line);border-radius:21px;padding:19px;max-height:485px;overflow:auto}.map-list button{display:block;width:100%;border:0;border-bottom:1px solid var(--line);text-align:left;background:white;padding:13px 6px}.map-list button:hover{background:#f4f8f3}.map-list strong{display:block}.map-list small{color:#738176}.map-list .map-label{font-size:10px;color:#ce6848;letter-spacing:1px;font-weight:800}.closing{background:#182d27;border-radius:28px;color:#fff;padding:55px;display:flex;align-items:end;justify-content:space-between;gap:30px}.closing .display{max-width:700px}.closing p{color:#c2d1c6}.footer{display:flex;justify-content:space-between;gap:20px;padding:30px 0 45px;color:#6d796f;font-size:11px}.hidden{display:none!important}.leaflet-popup-content{font-family:'Be Vietnam Pro',sans-serif}.leaflet-popup-content a{color:#d45e3b;font-weight:700}body:not(.loaded) .map:after{content:'Đang tải bản đồ...';display:grid;place-items:center;height:100%}
+  @media(max-width:850px){nav a:not(.btn-dark){display:none}.hero{min-height:690px}.hero-content{padding:52px 28px 270px}.planner{left:20px;right:20px;bottom:18px}.form-grid,.form-grid.route-form{grid-template-columns:1fr 1fr}.form-grid button{grid-column:1/-1}.hero h1{font-size:80px}.map-layout{grid-template-columns:1fr}.map-list{max-height:260px}.cards,.results{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.wrap{padding:0 14px}header{height:65px}.brand{font-size:15px}.brand-mark{width:30px;height:30px}.btn-dark{padding:10px 12px}.hero{border-radius:20px;min-height:725px}.hero h1{font-size:clamp(61px,13vw,86px)}.hero p{font-size:12px}.hero-content{padding:40px 24px 360px}.planner{left:12px;right:12px;border-width:4px}.tabs .tab{font-size:12px}.form-grid,.form-grid.route-form{grid-template-columns:1fr}.form-grid select,.form-grid input{padding:10px}.form-grid button{padding:11px}.stats{margin-bottom:65px}.stat{padding:16px 12px}.stat strong{font-size:33px}.stat small{font-size:10px}.section-head{display:block}.intro,.timeline,.day-overview,.cards,.results,.finder-controls{grid-template-columns:1fr}.feature{min-height:230px}.display{font-size:55px}.day-copy{padding:24px}.day-copy h3{font-size:23px}.day-visual{min-height:210px}.stop{grid-template-columns:67px 1fr;padding:17px}.finder{padding:20px}.dest-card{height:310px}.closing{padding:28px;display:block}.footer{display:block}}
+
+</style>
+  <style>
+.multi-hero{background-image:linear-gradient(90deg,rgba(4,27,24,.91),rgba(6,34,30,.3)),url('https://cdn.hanoivoyage.com/uploads/Blogs/Vietnam/Phu-Quoc/phu-quoc-bai-sao-beach-02.jpg');}
+.multi-hero .hero-content{padding-bottom:220px}.multi-hero h1{font-size:clamp(66px,8.7vw,124px)}
+.multi-destinations{margin-top:0}.city-filter{display:flex;gap:12px;margin:0 0 22px}.city-filter input,.city-filter select{border:1px solid #dde4db;padding:15px 17px;border-radius:12px;background:white;min-width:0}.city-filter input{flex:1}.city-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.city-card{border:0;border-radius:20px;min-height:230px;background:var(--tone);color:white;position:relative;overflow:hidden;text-align:left;padding:23px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;transition:transform .2s,box-shadow .2s}
+.city-card:hover{transform:translateY(-4px);box-shadow:0 15px 25px #17332c18}.city-card.selected{outline:4px solid #c9f16a;outline-offset:-4px}.city-card:after{content:'';position:absolute;right:-50px;bottom:-90px;border:2px solid #ffffff2a;border-radius:50%;width:240px;height:240px;box-shadow:0 0 0 35px #ffffff0d,0 0 0 70px #ffffff08}
+.city-card .emoji{font-size:39px}.city-card .region{font-size:10px;letter-spacing:1.4px;font-weight:800;text-transform:uppercase;opacity:.85}.city-card h3{font-family:'Barlow Condensed';font-size:38px;margin:0;line-height:1.1;position:relative;z-index:1}.city-card p{font-size:11px;line-height:1.6;margin:7px 0 0;opacity:.92;position:relative;z-index:1}.city-card .city-arrow{position:absolute;right:22px;top:18px;font-size:24px}
+.selected-city{background:#173a33;color:white;border-radius:22px;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.selected-city .big-icon{font-size:48px}.selected-city h3{font-size:27px;margin:0;line-height:1.3}.selected-city p{margin:4px 0 0;color:#d8e8dc;font-size:12px}.selected-city .subtitle{font-size:11px;color:#c9f16a;font-weight:800}.selected-city button{background:#c9f16a;color:#15241e;border:0;border-radius:11px;padding:11px 17px;font-weight:800}
+.day-group{margin:22px 0 30px}.day-overview{grid-template-columns:1fr;background:#e8eee4;min-height:0}.day-copy{padding:27px 30px}.day-copy h3{font-size:28px}.day-group .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}.stop .time{font-size:25px}.stop .loc{word-break:break-word}
+.multi-finder{grid-template-columns:1.5fr 1fr auto}.food-chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.food-chips span{border:1px solid #739187;color:#d9ede5;padding:7px 12px;border-radius:30px;font-size:11px}.results{grid-template-columns:repeat(3,minmax(0,1fr))}.result{min-height:175px}.result .kind{display:inline-block;font-size:10px;font-weight:800;color:#c85e42;letter-spacing:1px;margin-bottom:7px}.result a{font-size:11px;color:#0b705a;font-weight:700}.result p{margin:8px 0}.map-list button{cursor:pointer}
+.empty{padding:35px;background:#ffffff19;border-radius:14px;grid-column:1/-1}.btn-map{display:inline-block;margin-top:6px;color:#25715c;font-weight:800;font-size:11px}.city-count{font-size:12px;color:#718178;margin-top:8px}
+@media(max-width:950px){.city-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.multi-hero .hero-content{padding-bottom:340px}.multi-hero h1{font-size:clamp(60px,11vw,90px)}.city-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.city-card{min-height:205px;padding:18px}.city-card h3{font-size:30px}.city-filter{flex-direction:column}.day-group .timeline,.results{grid-template-columns:1fr}.selected-city{align-items:flex-start;flex-wrap:wrap}.selected-city button{width:100%}.multi-finder{grid-template-columns:1fr}.food-chips{max-height:125px;overflow:auto}}
+@media(max-width:400px){.city-grid{gap:9px}.city-card{min-height:190px}.city-card h3{font-size:27px}.city-card .emoji{font-size:32px}.multi-hero h1{font-size:56px}}
+
+/* Bản tối ưu cho điện thoại và chế độ xem trước file HTML trên iOS. */
+.offline-notice{padding:12px 16px;background:#fff4e5;color:#805223;font-size:12px;line-height:1.6;font-weight:600}
+.js-ready .offline-notice{display:none}
+.fallback-message{grid-column:1/-1;background:#e8eee4;border-radius:16px;padding:22px;color:#314239;line-height:1.8}
+.form-grid select{color:#182a23;background-color:#f8faf7;-webkit-text-fill-color:#182a23}
+@media(max-width:700px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .wrap{padding-inline:12px}
+  header{min-height:62px}
+  .multi-hero{height:auto;min-height:0;padding-bottom:12px;border-radius:20px;background-position:center}
+  .multi-hero .hero-content{padding:32px 20px 18px;max-width:100%}
+  .multi-hero h1{font-size:clamp(42px,11vw,58px);line-height:1.01;letter-spacing:-.3px;margin:17px 0}
+  .multi-hero p{font-size:13px;line-height:1.75}
+  .multi-hero .eyebrow{font-size:9px;letter-spacing:1px;padding:7px 10px;white-space:normal;max-width:100%}
+  .multi-hero .planner{position:relative;inset:auto;left:auto;right:auto;bottom:auto;width:calc(100% - 24px);margin:15px 12px 0;border-width:3px;border-radius:17px}
+  .multi-hero .tabs{gap:4px;padding:5px}
+  .multi-hero .tabs .tab{font-size:11px;padding:12px 6px;line-height:1.45}
+  .multi-hero .form-grid,.multi-hero .form-grid.route-form{display:flex;flex-direction:column;gap:10px;padding:12px}
+  .multi-hero .form-grid>*{width:100%;min-height:44px}
+  .form-grid select,.form-grid input{font-size:16px!important;padding:12px 14px!important}
+  .form-grid button{font-size:14px;min-height:45px}
+  .stats{margin-top:15px;margin-bottom:48px}
+  .stat strong{font-size:clamp(23px,7vw,32px)}
+  .stat small{font-size:9px}
+  .display{font-size:clamp(39px,10vw,56px);overflow-wrap:anywhere}
+  .city-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .city-card{min-width:0}.city-card h3{overflow-wrap:anywhere}
+  .selected-city,.day-copy,.stop,.finder,.closing{max-width:100%}
+  .map{height:350px}
+}
+@media(max-width:360px){
+  .multi-hero h1{font-size:41px}
+  .multi-hero .hero-content{padding-inline:16px}
+  .city-card{padding:13px}.city-card h3{font-size:24px}
+  .tabs .tab{font-size:10px}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap" id="top">
+  <header>
+    <a class="brand" href="#top"><span class="brand-mark">✦</span> Đi Đâu Việt Nam</a>
+    <nav aria-label="Điều hướng chính">
+      <a href="#destinations">Điểm đến</a><a href="#itinerary">Lịch trình</a><a href="#food">Ăn gì?</a><a href="#map">Bản đồ</a>
+      <a class="btn-dark" href="#planner">Khám phá ngay ↗</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero multi-hero" aria-label="Trợ lý du lịch Việt Nam">
+      <div class="hero-content">
+        <span class="eyebrow">✦ 12 ĐIỂM ĐẾN · 36 NGÀY KHÁM PHÁ</span>
+        <h1>ĐẾN ĐÂU.<br><span>BIẾT ĐI ĐÂU.</span><br>BIẾT ĂN GÌ.</h1>
+        <p>Từ Hà Giang hùng vĩ đến biển Phú Quốc, từ phố cổ Hội An đến nhịp sống Sài Gòn. Chọn điểm đến và xem lịch trình 3 ngày 2 đêm được sắp xếp theo khu vực.</p>
+      </div>
+      <div class="planner" id="planner">
+        <div class="offline-notice" id="offlineNotice">Bạn đang xem bản xem trước HTML. Để chọn tỉnh thành và xem lịch trình đầy đủ trên iPhone, hãy mở website bằng Safari/Chrome qua một địa chỉ web.</div>
+        <div class="tabs" role="tablist">
+          <button class="tab active" id="routeTab" type="button" role="tab" aria-selected="true">🧭 Lên lịch trình</button>
+          <button class="tab" id="foodTab" type="button" role="tab" aria-selected="false">🍜 Ăn gì & chơi đâu?</button>
+        </div>
+        <form class="form-grid route-form" id="quickRoute">
+          <select id="qCity" aria-label="Chọn điểm đến">
+            <option value="phu-quoc">🏝️ Phú Quốc</option>
+            <option value="ha-noi">🏛️ Hà Nội</option>
+            <option value="hai-phong">⚓ Hải Phòng</option>
+            <option value="quang-ninh">⛵ Quảng Ninh</option>
+            <option value="ha-giang">⛰️ Hà Giang</option>
+            <option value="hue">🏯 Huế</option>
+            <option value="hcm">🌆 TP. Hồ Chí Minh</option>
+            <option value="da-lat">🌸 Đà Lạt</option>
+            <option value="da-nang">🌉 Đà Nẵng</option>
+            <option value="ninh-binh">🚣 Ninh Bình</option>
+            <option value="hoi-an">🏮 Phố cổ Hội An</option>
+            <option value="thanh-hoa">🌾 Thanh Hóa</option>
+          </select>
+          <select id="qDay" aria-label="Chọn ngày"><option value="1">Ngày 1</option><option value="2">Ngày 2</option><option value="3">Ngày 3</option><option value="all">Trọn 3 ngày 2 đêm</option></select>
+          <button type="submit">Xem hành trình ↗</button>
+        </form>
+        <form class="form-grid route-form hidden" id="quickFood">
+          <select id="qFoodCity" aria-label="Thành phố"><option value="phu-quoc">🏝️ Phú Quốc</option><option value="ha-noi">🏛️ Hà Nội</option><option value="hai-phong">⚓ Hải Phòng</option><option value="quang-ninh">⛵ Quảng Ninh</option><option value="ha-giang">⛰️ Hà Giang</option><option value="hue">🏯 Huế</option><option value="hcm">🌆 TP. Hồ Chí Minh</option><option value="da-lat">🌸 Đà Lạt</option><option value="da-nang">🌉 Đà Nẵng</option><option value="ninh-binh">🚣 Ninh Bình</option><option value="hoi-an">🏮 Phố cổ Hội An</option><option value="thanh-hoa">🌾 Thanh Hóa</option></select>
+          <input id="qSearch" placeholder="Tìm món, điểm tham quan..." aria-label="Tìm kiếm">
+          <button type="submit">Tìm gợi ý ↗</button>
+        </form>
+      </div>
+    </section>
+    <div class="stats">
+      <div class="stat"><strong>12 ĐIỂM ĐẾN</strong><small>Bắc · Trung · Nam</small></div>
+      <div class="stat"><strong>3N2Đ</strong><small>Mỗi điểm đến một hành trình</small></div>
+      <div class="stat"><strong>01 BẢN ĐỒ</strong><small>Tra cứu và mở chỉ đường</small></div>
+    </div>
+    <section id="destinations" class="destinations multi-destinations">
+      <div class="section-head">
+        <div><span class="kicker">CHỌN NƠI BẠN MUỐN ĐI</span><h2 class="display">VIỆT NAM CÓ HẸN VỚI BẠN.</h2></div>
+        <p>12 hành trình riêng biệt, từ thành phố, di sản đến biển đảo và núi rừng. Chọn nơi bạn thích để bắt đầu.</p>
+      </div>
+      <div class="city-filter">
+        <input id="citySearch" placeholder="🔎 Tìm Hà Nội, Huế, Phú Quốc..." aria-label="Tìm điểm đến">
+        <select id="regionFilter" aria-label="Lọc vùng miền"><option value="all">Tất cả vùng miền</option><option value="Miền Bắc">Miền Bắc</option><option value="Miền Bắc Trung Bộ">Bắc Trung Bộ</option><option value="Miền Trung">Miền Trung</option><option value="Tây Nguyên">Tây Nguyên</option><option value="Miền Nam">Miền Nam</option></select>
+      </div>
+      <div class="city-grid" id="cityGrid"><p class="fallback-message">12 điểm đến: Phú Quốc · Hà Nội · Hải Phòng · Quảng Ninh · Hà Giang · Huế · TP. Hồ Chí Minh · Đà Lạt · Đà Nẵng · Ninh Bình · Phố cổ Hội An · Thanh Hóa. Vui lòng mở trong trình duyệt để chọn điểm đến và xem nội dung chi tiết.</p></div>
+    </section>
+    <section id="itinerary">
+      <div class="section-head">
+        <div><span class="kicker">LỊCH TRÌNH TỪNG NGÀY</span><h2 class="display" id="itineraryHeading">ĐI CHƠI CÓ KẾ HOẠCH.</h2></div>
+        <p id="citySummary">Chọn một điểm đến để xem tuyến tham quan chi tiết, món ăn và gợi ý thời gian.</p>
+      </div>
+      <div class="selected-city" id="selectedCityBar"></div>
+      <div class="days-switch" role="tablist" aria-label="Chọn ngày">
+        <button class="day-btn active" data-day="1">NGÀY 01</button>
+        <button class="day-btn" data-day="2">NGÀY 02</button>
+        <button class="day-btn" data-day="3">NGÀY 03</button>
+        <button class="day-btn" data-day="all">XEM CẢ 3 NGÀY</button>
+      </div>
+      <div id="dayPanels"></div>
+      <div class="note" id="travelNote"></div>
+    </section>
+    <section class="finder" id="food">
+      <div class="section-head">
+        <div><span class="kicker" style="color:#c9f16a">ĂN GÌ? CHƠI ĐÂU?</span><h2 class="display">KHÁM PHÁ THEO GU.</h2></div>
+        <p>Tìm điểm ăn uống, di tích và hoạt động xuất hiện trong lịch trình đã chọn.</p>
+      </div>
+      <div class="finder-controls multi-finder">
+        <input id="foodSearch" placeholder="Tìm quán, món ăn, địa danh..." aria-label="Tìm hoạt động">
+        <select id="foodType" aria-label="Loại hoạt động"><option value="all">Tất cả hoạt động</option><option value="Ăn uống">Ăn uống</option><option value="Tham quan">Tham quan / văn hóa</option><option value="Thiên nhiên">Thiên nhiên / biển</option></select>
+        <button class="primary" id="clearFilters">Đặt lại</button>
+      </div>
+      <div class="food-chips" id="foodChips"></div>
+      <div class="results" id="foodResults"></div>
+    </section>
+    <section class="map-section" id="map">
+      <div class="section-head">
+        <div><span class="kicker">BẢN ĐỒ ĐIỂM ĐẾN</span><h2 class="display">ĐI ĐÚNG HƯỚNG.</h2></div>
+        <p>Bản đồ tập trung vào khu vực bạn chọn. Các nút bên phải mở tìm kiếm vị trí thực tế trên Google Maps.</p>
+      </div>
+      <div class="map-layout"><div class="map" id="leafletMap" aria-label="Bản đồ vùng điểm đến"></div><div class="map-list" id="mapList"></div></div>
+      <div class="note">Bản đồ hiển thị tâm khu vực, không phải tọa độ chính xác từng điểm. Hãy dùng nút “Mở chỉ đường” và kiểm tra vị trí trước khi di chuyển.</div>
+    </section>
+    <section class="closing">
+      <div><span class="kicker" style="color:#c9f16a">ĐI THÊM MỘT CHÚT · YÊU THÊM VIỆT NAM</span><h2 class="display">12 ĐIỂM ĐẾN.<br>VÔ VÀN KỶ NIỆM.</h2><p>Lưu lại hành trình để chuyến đi của bạn dễ dàng hơn.</p></div>
+      <button class="primary" id="shareBtn">Chia sẻ hành trình ↗</button>
+    </section>
+  </main>
+  <footer class="footer"><span>© 2026 Đi Đâu Việt Nam · Cẩm nang du lịch 12 điểm đến</span><span>Lịch trình tham khảo · Giờ mở cửa, vé, phương tiện cần xác nhận trước chuyến đi</span></footer>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const days={
+1:{title:'Dương Đông · Dinh Cậu · Bãi Trường · Chợ đêm',desc:'Chạm vào nhịp sống đảo Ngọc với ẩm thực địa phương, bãi biển và buổi tối náo nhiệt.',img:'https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1000&q=80',stops:[
+['07:00–08:00','Ăn sáng tại Bún quậy Kiến Xây','Bún quậy chả tôm, chả cá hoặc thập cẩm; sợi bún tươi, nước chấm pha theo khẩu vị.','Bún quậy Kiến Xây','28 Bạch Đằng, Dương Đông, Phú Quốc','40.000–80.000đ/người','Ăn uống'],
+['08:00–10:00','Dinh Cậu · Dinh Bà · trung tâm Dương Đông','Ngắm ghềnh đá, biển và khám phá tín ngưỡng ngư dân. Bánh mì 20–40k, nước dừa 25–40k, nước ép 30–50k.','Dinh Cậu','Dương Đông, Phú Quốc','','Tham quan'],
+['10:00–11:30','Thăm nhà thùng nước mắm truyền thống','Tìm hiểu quy trình ủ chượp cá cơm và mua đặc sản. Chặng An Thới khá xa Dương Đông, nên cân nhắc chuyển sang ngày 2.','Nhà thùng Phụng Hưng','An Thới, Phú Quốc','Xác nhận trước','Trải nghiệm'],
+['11:30–12:30','Ăn trưa tại Xin Chào Seafood','Gỏi cá trích, mực nướng, tôm hấp, cơm chiên hải sản; nước ép hoặc nước suối.','Xin Chào Seafood','66 Trần Hưng Đạo, Dương Đông, Phú Quốc','150.000–300.000đ/người','Ăn uống'],
+['12:30–14:00','Nhận phòng và nghỉ trưa','Về khách sạn nghỉ ngơi hoặc gửi hành lý nếu chưa đến giờ nhận phòng.','','','','Nghỉ ngơi'],
+['14:00–16:30','Thư giãn tại Bãi Trường','Đi dạo, ngắm biển và chụp ảnh. Có thể ghé ANBA Coffee uống cà phê dừa 40–80k.','ANBA Coffee','131 Trần Hưng Đạo, Dương Đông, Phú Quốc','30.000–80.000đ','Biển & cà phê'],
+['16:30–18:00','Ngắm hoàng hôn trên biển','Dành thời gian ngắm chiều xuống tại Bãi Trường và ghi lại những khoảnh khắc đầu tiên.','Bãi Trường','Phú Quốc','','Chụp ảnh'],
+['18:00–19:30','Ăn tối tại MYLA SEAFOOD','Tôm sốt bơ tỏi, mực nướng, cơm chiên hoặc mì xào hải sản. Hỏi giá hải sản theo cân trước khi gọi.','MYLA SEAFOOD','98 Trần Hưng Đạo, Dương Đông, Phú Quốc','150.000–300.000đ/người','Ăn uống'],
+['19:30–21:00','Dạo Chợ đêm Phú Quốc','Thử kem cuộn 30–50k, hải sản nướng 50–150k và mua đậu phộng đặc sản. Nghỉ đêm tại Dương Đông.','Chợ đêm Phú Quốc','Đường Bạch Đằng, Dương Đông, Phú Quốc','20.000–150.000đ','Mua sắm']]},
+2:{title:'Bãi Sao · Hòn Thơm · Sunset Town',desc:'Ngày khám phá Nam đảo với biển xanh, cáp treo và những góc phố đón hoàng hôn.',img:'https://media.mia.vn/uploads/blog-du-lich/bai-sao-phu-quoc-diem-dung-chan-ly-tuong-tren-dao-ngoc-01-1610609497.jpg',stops:[
+['07:00–08:00','Ăn sáng tại Dương Đông','Bánh canh ghẹ, bánh canh chả cá hoặc bún hải sản gần khách sạn.','','','40.000–100.000đ/người','Ăn uống'],
+['08:00–10:30','Tắm biển và chụp ảnh Bãi Sao','Thư giãn trên bãi cát sáng màu; nước dừa 30–50k, đồ ăn nhẹ 40–80k.','Bãi Sao','An Thới, Phú Quốc','','Biển'],
+['10:30–12:00','Đến ga cáp treo Hòn Thơm','Di chuyển tới ga tại An Thới, làm thủ tục và chuẩn bị trải nghiệm cáp treo.','Ga cáp treo Hòn Thơm','An Thới, Phú Quốc','Kiểm tra vé','Di chuyển'],
+['12:00–13:00','Ăn trưa tại Hòn Thơm','Cơm hải sản, món nướng hoặc mì xào hải sản tại khu ẩm thực đang hoạt động.','Hòn Thơm','Hòn Thơm, Phú Quốc','100.000–200.000đ/người','Ăn uống'],
+['13:00–15:00','Vui chơi và khám phá Hòn Thơm','Tham quan, chụp ảnh và tham gia trò chơi nếu vé bao gồm; nước uống dự kiến 25–60k.','Hòn Thơm','Hòn Thơm, Phú Quốc','Xác nhận dịch vụ vé','Vui chơi'],
+['15:00–16:00','Cáp treo trở về An Thới','Trở về đất liền và di chuyển tới Sunset Town.','Ga cáp treo Hòn Thơm','An Thới, Phú Quốc','','Di chuyển'],
+['16:00–18:00','Sunset Town và Cầu Hôn','Khám phá phố ven biển phong cách Địa Trung Hải; ghé Senthy Coffee Lounge uống cà phê hoặc trà trái cây.','Sunset Town','An Thới, Phú Quốc','35.000–70.000đ/đồ uống','Tham quan'],
+['18:00–19:30','Ăn tối ở An Thới','Chọn nhà hàng gần Sunset Town: hải sản nướng, cơm chiên, mì xào hoặc món Việt.','Sunset Town','An Thới, Phú Quốc','150.000–300.000đ/người','Ăn uống'],
+['19:30–21:00','Dạo phố biển về đêm','Chụp ảnh và tận hưởng không khí buổi tối. Kiểm tra lịch biểu diễn/sự kiện nếu muốn tham dự; về khách sạn nghỉ.','Sunset Town','An Thới, Phú Quốc','Sự kiện tùy ngày','Thư giãn']]},
+3:{title:'Chợ Dương Đông · Đặc sản · Cà phê',desc:'Một buổi sáng thong thả để tận hưởng hương vị địa phương và chọn quà trước khi rời đảo.',img:'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1000&q=80',stops:[
+['07:00–08:00','Ăn sáng món địa phương','Trở lại Bún quậy Kiến Xây, hoặc đổi món bánh canh ghẹ/bún kèn.','Bún quậy Kiến Xây','28 Bạch Đằng, Dương Đông, Phú Quốc','40.000–80.000đ/người','Ăn uống'],
+['08:00–09:30','Khám phá Chợ Dương Đông','Mua hồ tiêu, nước mắm, hải sản khô, đậu phộng và quà lưu niệm. Hỏi giá trước, kiểm tra quy định vận chuyển.','Chợ Dương Đông','Dương Đông, Phú Quốc','100.000–500.000đ mua sắm','Mua sắm'],
+['09:30–10:30','Cà phê tại Ann Cafe & Brunch','Cà phê muối hoặc cà phê trứng; thư giãn và chụp ảnh.','Ann Cafe & Brunch Phu Quoc','7 Lê Thị Hồng Gấm, Dương Đông, Phú Quốc','40.000–80.000đ/cốc','Cà phê'],
+['10:30–11:30','Mua sắm đặc sản lần cuối','Ghé cửa hàng ở Dương Đông mua hồ tiêu, nước mắm, hải sản khô, bánh và đồ ăn đặc sản.','Chợ Dương Đông','Dương Đông, Phú Quốc','Tùy nhu cầu','Mua sắm'],
+['11:30–12:30','Ăn trưa trước khi rời đảo','Chọn quán cơm gia đình: cá chiên, thịt kho, canh chua cá hoặc cơm hải sản.','','Dương Đông, Phú Quốc','50.000–120.000đ/người','Ăn uống'],
+['12:30–13:30','Về khách sạn, thu dọn hành lý','Kiểm tra đồ cá nhân và sắp xếp thời gian di chuyển tới sân bay/bến tàu theo giờ khởi hành.','','','','Kết thúc']]}};
+const places=[
+{name:'Bún quậy Kiến Xây',type:'Bún quậy',area:'Dương Đông',price:80,range:'40–80k/người',address:'28 Bạch Đằng, Dương Đông, Phú Quốc',lat:10.2128,lng:103.9603,desc:'Bún tươi, chả tôm, chả cá; đặc sản nên thử.'},
+{name:'Xin Chào Seafood',type:'Hải sản',area:'Dương Đông',price:300,range:'150–300k/người',address:'66 Trần Hưng Đạo, Dương Đông, Phú Quốc',lat:10.2084,lng:103.9612,desc:'Gỏi cá trích, mực nướng, cơm chiên hải sản.'},
+{name:'MYLA SEAFOOD',type:'Hải sản',area:'Dương Đông',price:300,range:'150–300k/người',address:'98 Trần Hưng Đạo, Dương Đông, Phú Quốc',lat:10.1984,lng:103.9655,desc:'Hải sản nướng, tôm sốt bơ tỏi.'},
+{name:'ANBA Coffee',type:'Cà phê',area:'Bãi Trường',price:80,range:'40–80k/ly',address:'131 Trần Hưng Đạo, Dương Đông, Phú Quốc',lat:10.1943,lng:103.9652,desc:'Cà phê dừa và đồ uống giải khát.'},
+{name:'Senthy Coffee Lounge',type:'Cà phê',area:'An Thới',price:70,range:'35–70k/ly',address:'Sunset Town, An Thới, Phú Quốc',lat:10.0292,lng:104.0098,desc:'Nghỉ chân, cà phê và trà trái cây.'},
+{name:'Ann Cafe & Brunch Phu Quoc',type:'Cà phê',area:'Dương Đông',price:80,range:'40–80k/ly',address:'7 Lê Thị Hồng Gấm, Dương Đông, Phú Quốc',lat:10.2145,lng:103.9596,desc:'Cà phê muối, cà phê trứng.'},
+{name:'Dinh Cậu',type:'Tham quan',area:'Dương Đông',price:0,range:'Tham quan',address:'Dương Đông, Phú Quốc',lat:10.2184,lng:103.9557,desc:'Điểm tín ngưỡng, ghềnh đá ven biển.'},
+{name:'Chợ đêm Phú Quốc',type:'Ẩm thực & mua sắm',area:'Dương Đông',price:150,range:'20–150k/món',address:'Đường Bạch Đằng, Dương Đông, Phú Quốc',lat:10.2132,lng:103.9595,desc:'Ăn vặt, quà lưu niệm và hải sản nướng.'},
+{name:'Chợ Dương Đông',type:'Mua sắm',area:'Dương Đông',price:500,range:'Tùy nhu cầu',address:'Dương Đông, Phú Quốc',lat:10.2165,lng:103.9671,desc:'Chợ truyền thống và đặc sản địa phương.'},
+{name:'Bãi Trường',type:'Bãi biển',area:'Bãi Trường',price:0,range:'Tham quan',address:'Bãi Trường, Phú Quốc',lat:10.1712,lng:103.9632,desc:'Tản bộ và ngắm hoàng hôn.'},
+{name:'Bãi Sao',type:'Bãi biển',area:'An Thới',price:0,range:'Tham quan',address:'Bãi Sao, An Thới, Phú Quốc',lat:10.0457,lng:104.0353,desc:'Biển xanh, bãi cát sáng màu.'},
+{name:'Hòn Thơm',type:'Vui chơi',area:'An Thới',price:0,range:'Kiểm tra giá vé',address:'Hòn Thơm, Phú Quốc',lat:9.9583,lng:104.0109,desc:'Cáp treo và trải nghiệm vui chơi trên đảo.'},
+{name:'Sunset Town',type:'Tham quan',area:'An Thới',price:0,range:'Tùy dịch vụ',address:'Sunset Town, An Thới, Phú Quốc',lat:10.0292,lng:104.0082,desc:'Cầu Hôn, kiến trúc Địa Trung Hải, phố biển.'},
+{name:'Nhà thùng Phụng Hưng',type:'Trải nghiệm',area:'An Thới',price:0,range:'Xác nhận trước',address:'An Thới, Phú Quốc',lat:10.032,lng:104.006,desc:'Tìm hiểu nghề sản xuất nước mắm truyền thống.'}
+];
+
+</script>
+<script>
+// Các lịch trình tự biên soạn dựa trên các điểm tham quan chính.
+// Thời gian là khung gợi ý, không phải lịch mở cửa hay thời gian di chuyển được đảm bảo.
+// Mỗi điểm đến có 3 ngày; các chặng được nhóm để tránh đi vòng.
+const destinations=[
+{id:'phu-quoc',name:'Phú Quốc',region:'Miền Nam',emoji:'🏝️',color:'#087f7b',center:[10.17,103.98],summary:'Đảo Ngọc · Biển xanh · Hải sản · Hoàng hôn',note:'Giữ nguyên lịch trình chi tiết của bạn. Chặng nhà thùng Phụng Hưng ở An Thới nên chuyển sang ngày 2 nếu muốn hạn chế đi vòng.',foods:['Bún quậy','Gỏi cá trích','Hải sản','Cà phê dừa'],days:[]},
+{id:'ha-noi',name:'Hà Nội',region:'Miền Bắc',emoji:'🏛️',color:'#9d4335',center:[21.0285,105.8542],summary:'Phố cổ · Hồ Gươm · Di sản · Ẩm thực',note:'Đi bộ khu phố cổ; các bảo tàng/di tích có thể nghỉ theo ngày trong tuần, cần kiểm tra giờ mở cửa.',foods:['Phở bò','Bún chả','Bún thang','Cà phê trứng'],days:[
+{title:'Hồ Gươm & phố cổ',stops:[['07:30','Ăn phở khu phố cổ','Bắt đầu ở trung tâm; thử phở truyền thống.','Phố cổ Hà Nội','Ăn uống'],['09:00','Hồ Hoàn Kiếm – đền Ngọc Sơn','Đi dạo ven hồ, qua cầu Thê Húc.','Hồ Hoàn Kiếm','Tham quan'],['11:30','Bún chả & nghỉ trưa','Ăn trưa gần phố cổ, tránh di chuyển xa.','Phố cổ Hà Nội','Ăn uống'],['14:00','Nhà cổ Mã Mây – phố nghề','Khám phá các tuyến Hàng Đào, Hàng Gai, Mã Mây.','Phố cổ Hà Nội','Văn hóa'],['19:00','Chợ đêm hoặc phố Tạ Hiện','Dạo phố sau bữa tối; chợ đêm tùy ngày hoạt động.','Tạ Hiện','Buổi tối']]},
+{title:'Văn Miếu & khu Ba Đình',stops:[['08:00','Văn Miếu – Quốc Tử Giám','Tham quan di tích giáo dục, chụp ảnh sân bia tiến sĩ.','Văn Miếu','Di sản'],['10:30','Hoàng thành Thăng Long','Tìm hiểu lịch sử kinh đô; dự trù thời gian tham quan.','Hoàng thành Thăng Long','Di sản'],['12:30','Cơm trưa khu Ba Đình','Dùng bữa và nghỉ chân trước buổi chiều.','Ba Đình','Ăn uống'],['14:30','Lăng Chủ tịch Hồ Chí Minh – Quảng trường Ba Đình','Tham quan bên ngoài; nếu vào lăng cần theo lịch mở cửa, trang phục và quy định.','Quảng trường Ba Đình','Văn hóa'],['17:30','Hồ Tây – chùa Trấn Quốc','Ngắm chiều trên hồ, ăn tối quanh khu vực Hồ Tây.','Chùa Trấn Quốc','Hoàng hôn']]},
+{title:'Nhịp sống Hà Nội',stops:[['08:00','Bảo tàng Dân tộc học','Khám phá văn hóa các dân tộc, dành 1–2 giờ.','Bảo tàng Dân tộc học Việt Nam','Bảo tàng'],['11:30','Ăn bún thang hoặc bún riêu','Chọn quán gần tuyến trở lại trung tâm.','Cầu Giấy','Ăn uống'],['14:00','Nhà thờ Lớn – Tràng Tiền','Đi bộ và thưởng thức cà phê/tráng miệng.','Nhà thờ Lớn Hà Nội','Dạo phố'],['16:00','Mua quà đặc sản','Ô mai, bánh cốm hoặc sản phẩm thủ công.','Phố Hàng Đường','Mua sắm']]}]},
+{id:'hai-phong',name:'Hải Phòng',region:'Miền Bắc',emoji:'⚓',color:'#2877a6',center:[20.8449,106.6881],summary:'Phố cảng · Food tour · Cát Bà · Vịnh Lan Hạ',note:'Ngày 2 cần di chuyển ra Cát Bà và đặt tàu/đò phù hợp thời tiết; không mặc định tất cả tour vịnh hoạt động mỗi ngày.',foods:['Bánh đa cua','Nem cua bể','Bánh mì cay','Ốc Hải Phòng'],days:[
+{title:'Trung tâm thành phố & food tour',stops:[['08:00','Bánh đa cua Hải Phòng','Ăn sáng đặc sản phố cảng.','Trung tâm Hải Phòng','Ăn uống'],['09:30','Nhà hát thành phố – vườn hoa Nguyễn Du','Khám phá kiến trúc trung tâm và các trục phố cổ.','Nhà hát lớn Hải Phòng','Tham quan'],['12:00','Nem cua bể & nghỉ trưa','Thưởng thức ẩm thực Hải Phòng.','Trung tâm Hải Phòng','Ăn uống'],['14:30','Bảo tàng Hải Phòng – phố Tam Bạc','Tìm hiểu lịch sử thành phố và dạo tuyến sông.','Phố Tam Bạc','Văn hóa'],['18:30','Food tour buổi tối','Bánh mì cay, chè dừa dầm, ốc; ăn vừa sức.','Chợ Cát Bi','Ẩm thực']]},
+{title:'Cát Bà & vịnh Lan Hạ',stops:[['07:00','Khởi hành ra Cát Bà','Di chuyển bằng tuyến phà/cáp treo hoặc phương án đang hoạt động; dự trù thời gian nối chặng.','Đảo Cát Bà','Di chuyển'],['10:30','Nhận phòng, dạo thị trấn Cát Bà','Gửi hành lý, uống nước và chuẩn bị hoạt động biển.','Thị trấn Cát Bà','Nghỉ ngơi'],['12:30','Ăn hải sản địa phương','Chọn nhà hàng tại thị trấn, hỏi giá theo cân.','Thị trấn Cát Bà','Ăn uống'],['14:00','Tour vịnh Lan Hạ ngắn / chèo kayak','Chỉ đi nếu thời tiết và lịch tàu phù hợp; đặt tour được cấp phép.','Vịnh Lan Hạ','Trải nghiệm'],['18:30','Ngắm biển, nghỉ đêm Cát Bà','Dạo khu vực bờ biển theo điều kiện thời tiết.','Cát Bà','Thư giãn']]},
+{title:'Thiên nhiên Cát Bà & trở về',stops:[['07:30','Ăn sáng tại Cát Bà','Chuẩn bị nước và giày phù hợp.','Cát Bà','Ăn uống'],['09:00','Vườn quốc gia Cát Bà','Chọn tuyến đi bộ ngắn phù hợp thể lực, tránh đi sâu khi không có hướng dẫn.','Vườn quốc gia Cát Bà','Thiên nhiên'],['12:00','Ăn trưa, trả phòng','Thu dọn hành lý trước giờ di chuyển.','Cát Bà','Nghỉ ngơi'],['13:30','Về lại Hải Phòng','Kiểm tra lịch phà/tàu, dành thời gian dự phòng.','Hải Phòng','Di chuyển']]}]},
+{id:'quang-ninh',name:'Quảng Ninh',region:'Miền Bắc',emoji:'⛵',color:'#148e93',center:[20.95,107.09],summary:'Vịnh Hạ Long · Hang động · Yên Tử',note:'Lịch tàu vịnh Hạ Long, tuyến tham quan và giá vé phụ thuộc điều kiện thời tiết, cảng và đơn vị tổ chức. Yên Tử là tuyến ngày 3 tương đối xa, nên xuất phát sớm.',foods:['Chả mực Hạ Long','Bún bề bề','Sá sùng','Hải sản'],days:[
+{title:'Bãi Cháy & Hạ Long',stops:[['08:00','Đến Hạ Long, ăn bún bề bề','Nhận phòng hoặc gửi hành lý.','Bãi Cháy','Ăn uống'],['09:30','Bảo tàng Quảng Ninh','Tham quan khu trưng bày và kiến trúc bên vịnh.','Bảo tàng Quảng Ninh','Văn hóa'],['12:00','Chả mực Hạ Long','Ăn trưa, nghỉ ngơi.','Hạ Long','Ăn uống'],['15:00','Bãi biển Bãi Cháy','Dạo biển, thư giãn.','Bãi Cháy','Biển'],['19:00','Dạo phố, ăn hải sản','Hỏi giá hải sản trước khi gọi.','Bãi Cháy','Buổi tối']]},
+{title:'Du thuyền vịnh Hạ Long',stops:[['07:30','Ăn sáng và đến cảng','Có mặt theo giờ hẹn của tour.','Cảng tàu khách quốc tế Hạ Long','Di chuyển'],['09:00','Tham quan vịnh Hạ Long bằng tàu','Lộ trình có thể gồm hang động/đảo tùy tuyến đã mua.','Vịnh Hạ Long','Du thuyền'],['12:00','Ăn trưa trên tàu hoặc tại bến','Theo dịch vụ đã đặt; kiểm tra phần bao gồm.','Vịnh Hạ Long','Ăn uống'],['14:30','Tiếp tục hoạt động trên vịnh','Chèo kayak hoặc tham quan hang theo tour, nếu được phép.','Vịnh Hạ Long','Trải nghiệm'],['18:00','Trở về khách sạn, nghỉ ngơi','Ăn tối và dạo Hạ Long.','Hạ Long','Nghỉ ngơi']]},
+{title:'Yên Tử & kết thúc',stops:[['07:00','Khởi hành đến Yên Tử','Đặt xe trước và dự trù di chuyển liên huyện.','Yên Tử','Di chuyển'],['09:00','Quần thể di tích Yên Tử','Chọn tuyến đi bộ/cáp treo phù hợp thể lực và giờ mở cửa.','Yên Tử','Tâm linh'],['12:30','Ăn trưa tại khu vực Yên Tử','Nghỉ chân sau tham quan.','Uông Bí','Ăn uống'],['14:00','Trở về / kết thúc hành trình','Dự phòng thời gian cho phương tiện về.','Uông Bí','Di chuyển']]}]},
+{id:'ha-giang',name:'Hà Giang',region:'Miền Bắc',emoji:'⛰️',color:'#8a7257',center:[22.8233,104.9836],summary:'Cao nguyên đá · Đồng Văn · Mã Pí Lèng',note:'Lịch 3N2Đ bắt đầu và kết thúc tại thành phố Hà Giang, KHÔNG bao gồm xe từ Hà Nội. Đèo núi nhiều khúc cua, nên đi cùng tài xế địa phương có kinh nghiệm; hạn chế lái xe tối và mùa mưa.',foods:['Thắng cố','Cháo ấu tẩu','Bánh tam giác mạch','Mèn mén'],days:[
+{title:'Hà Giang – Quản Bạ – Yên Minh',stops:[['07:00','Xuất phát từ thành phố Hà Giang','Kiểm tra phương tiện, đổ xăng, chuẩn bị áo mưa.','Thành phố Hà Giang','Di chuyển'],['09:00','Dốc Bắc Sum – Cổng Trời Quản Bạ','Dừng ngắm cảnh ở nơi được phép, không đỗ xe tại khúc cua.','Cổng Trời Quản Bạ','Ngắm cảnh'],['11:30','Ăn trưa tại Tam Sơn','Thưởng thức món địa phương và nghỉ ngơi.','Tam Sơn','Ăn uống'],['14:00','Núi Đôi Quản Bạ – Yên Minh','Tiếp tục cung đường núi, đi thong thả.','Yên Minh','Khám phá'],['17:00','Nghỉ đêm Yên Minh','Ăn tối, chuẩn bị ngày đi Đồng Văn.','Yên Minh','Nghỉ ngơi']]},
+{title:'Yên Minh – Đồng Văn – Lũng Cú',stops:[['07:00','Khởi hành từ Yên Minh','Ăn sáng sớm, kiểm tra dự báo thời tiết.','Yên Minh','Di chuyển'],['09:00','Dốc Thẩm Mã – Phố Cáo','Chụp ảnh tại điểm dừng an toàn.','Dốc Thẩm Mã','Ngắm cảnh'],['11:00','Dinh thự họ Vương','Tìm hiểu kiến trúc và câu chuyện văn hóa bản địa.','Dinh thự họ Vương','Văn hóa'],['13:30','Cột cờ Lũng Cú','Nhánh đi xa, chỉ thực hiện nếu còn đủ thời gian và thời tiết tốt.','Cột cờ Lũng Cú','Tham quan'],['17:30','Phố cổ Đồng Văn, nghỉ đêm','Ăn tối, đi bộ phố cổ.','Đồng Văn','Nghỉ ngơi']]},
+{title:'Đồng Văn – Mã Pí Lèng – về Hà Giang',stops:[['06:30','Khởi hành sớm qua Mã Pí Lèng','Ngắm cảnh đèo và sông Nho Quế ở điểm dừng an toàn.','Đèo Mã Pí Lèng','Ngắm cảnh'],['09:00','Mèo Vạc','Ăn sáng/ăn nhẹ, cân nhắc bỏ du thuyền sông Nho Quế để kịp đường về.','Mèo Vạc','Dừng chân'],['11:30','Ăn trưa dọc tuyến về','Chọn tuyến trở về phù hợp điều kiện đường.','Yên Minh','Ăn uống'],['17:30','Dự kiến về thành phố Hà Giang','Ngày di chuyển dài, không cố chạy tối nếu mưa/sương mù; nên dự phòng thêm một ngày.','Thành phố Hà Giang','Kết thúc']]}]},
+{id:'hue',name:'Huế',region:'Miền Trung',emoji:'🏯',color:'#76548a',center:[16.4637,107.5909],summary:'Kinh thành · Lăng tẩm · Sông Hương',note:'Quần thể di tích có lịch mở cửa và vé riêng. Nên mua vé tuyến phù hợp, mang trang phục lịch sự khi vào nơi thờ tự.',foods:['Bún bò Huế','Cơm hến','Bánh bèo','Chè Huế'],days:[
+{title:'Đại Nội & phố cổ Huế',stops:[['07:30','Bún bò Huế buổi sáng','Ăn sáng trong trung tâm.','Trung tâm Huế','Ăn uống'],['08:30','Đại Nội Huế','Dành 2–3 giờ tham quan Kinh thành, Ngọ Môn, các điện.','Đại Nội Huế','Di sản'],['12:00','Cơm hến hoặc món Huế','Ăn trưa, nghỉ ngơi.','Huế','Ăn uống'],['15:00','Chùa Thiên Mụ','Tham quan không gian chùa ven sông Hương.','Chùa Thiên Mụ','Tâm linh'],['18:30','Sông Hương – cầu Trường Tiền','Đi bộ và thưởng thức chè Huế.','Cầu Trường Tiền','Buổi tối']]},
+{title:'Lăng vua & làng nghề',stops:[['08:00','Lăng Khải Định','Tham quan công trình kiến trúc trên đồi.','Lăng Khải Định','Di sản'],['10:30','Lăng Minh Mạng','Khám phá khu lăng tẩm trong không gian xanh.','Lăng Minh Mạng','Di sản'],['12:30','Ăn trưa khu ven đô','Nghỉ trước chặng chiều.','Huế','Ăn uống'],['14:30','Lăng Tự Đức','Đến nếu đủ thời gian, tránh dồn quá nhiều lăng trong ngày.','Lăng Tự Đức','Di sản'],['18:00','Ẩm thực bánh Huế','Bánh bèo, nậm, lọc; nghỉ đêm trung tâm.','Huế','Ăn uống']]},
+{title:'Nhịp sống Huế',stops:[['08:00','Chợ Đông Ba','Thử món địa phương và tham quan chợ.','Chợ Đông Ba','Mua sắm'],['10:00','Cung An Định','Tham quan kiến trúc, kiểm tra giờ mở cửa.','Cung An Định','Văn hóa'],['12:00','Ăn trưa và nghỉ','Cơm niêu hoặc món Huế.','Huế','Ăn uống'],['14:00','Phố đi bộ ven sông – mua quà','Mè xửng, trà và đặc sản; kết thúc hành trình.','Huế','Thư giãn']]}]},
+{id:'hcm',name:'TP. Hồ Chí Minh',region:'Miền Nam',emoji:'🌆',color:'#b05d38',center:[10.7769,106.7009],summary:'Sài Gòn · Kiến trúc · Bảo tàng · Ẩm thực',note:'Ngày 3 có tuyến Củ Chi nửa ngày, cần đi sớm. Nếu ưu tiên nhẹ nhàng, thay bằng Chợ Lớn – Bình Tây.',foods:['Cơm tấm','Hủ tiếu','Bánh mì','Ốc Sài Gòn'],days:[
+{title:'Quận 1 lịch sử & phố đi bộ',stops:[['07:30','Ăn sáng cơm tấm / bánh mì','Bắt đầu gần trung tâm.','Quận 1, TP.HCM','Ăn uống'],['09:00','Dinh Độc Lập','Tham quan kiến trúc và không gian lịch sử.','Dinh Độc Lập','Di tích'],['11:00','Bưu điện Trung tâm – Nhà thờ Đức Bà','Chụp ảnh bên ngoài; một số khu vực có thể trùng tu.','Bưu điện Trung tâm Sài Gòn','Kiến trúc'],['14:00','Bảo tàng Chứng tích Chiến tranh','Tham quan có cân nhắc nội dung nhạy cảm.','Bảo tàng Chứng tích Chiến tranh','Bảo tàng'],['19:00','Phố đi bộ Nguyễn Huệ – Bến Bạch Đằng','Dạo đêm bên sông, ăn tối.','Phố đi bộ Nguyễn Huệ','Buổi tối']]},
+{title:'Chợ Lớn & nhịp sống Sài Gòn',stops:[['08:00','Chợ Bình Tây','Tham quan chợ truyền thống khu Chợ Lớn.','Chợ Bình Tây','Văn hóa'],['10:30','Chùa Thiên Hậu','Khám phá di sản tín ngưỡng người Hoa.','Chùa Bà Thiên Hậu','Tâm linh'],['12:00','Ăn trưa món Hoa – Việt','Hủ tiếu hoặc sủi cảo gần Chợ Lớn.','Chợ Lớn','Ăn uống'],['15:00','Bảo tàng Mỹ thuật TP.HCM','Quay lại trung tâm, tham quan kiến trúc và tác phẩm.','Bảo tàng Mỹ thuật TP.HCM','Bảo tàng'],['19:00','Chợ Bến Thành / khu ẩm thực','Dạo và chọn món tối.','Chợ Bến Thành','Ăn uống']]},
+{title:'Địa đạo Củ Chi nửa ngày',stops:[['07:00','Khởi hành đi Củ Chi','Dự phòng quãng đường ngoại thành, đặt xe/tour trước.','Địa đạo Củ Chi','Di chuyển'],['09:00','Tham quan Địa đạo Củ Chi','Chọn tuyến trải nghiệm phù hợp thể lực; theo hướng dẫn tại điểm.','Địa đạo Củ Chi','Lịch sử'],['12:30','Ăn trưa trên đường về','Thử món địa phương, nghỉ ngơi.','Củ Chi','Ăn uống'],['15:00','Về trung tâm và kết thúc','Dành thời gian dự phòng nếu cần ra sân bay.','TP. Hồ Chí Minh','Kết thúc']]}]},
+{id:'da-lat',name:'Đà Lạt',region:'Tây Nguyên',emoji:'🌸',color:'#6e8a66',center:[11.9404,108.4583],summary:'Hồ Xuân Hương · Đồi thông · Cà phê',note:'Đường đèo, mưa chiều và sương mù có thể làm thay đổi lịch. Chọn ngày nắng ráo cho hoạt động ngoài trời.',foods:['Bánh căn','Lẩu gà lá é','Bánh mì xíu mại','Cà phê'],days:[
+{title:'Trung tâm Đà Lạt',stops:[['07:30','Bánh căn hoặc bánh mì xíu mại','Ăn sáng địa phương.','Chợ Đà Lạt','Ăn uống'],['09:00','Hồ Xuân Hương – quảng trường Lâm Viên','Đi bộ ven hồ và chụp ảnh.','Hồ Xuân Hương','Tham quan'],['11:30','Ăn trưa trung tâm','Lẩu hoặc cơm địa phương, nghỉ ngơi.','Đà Lạt','Ăn uống'],['14:00','Dinh Bảo Đại / Biệt điện','Tìm hiểu kiến trúc và lịch sử, tùy giờ hoạt động.','Dinh III Bảo Đại','Văn hóa'],['18:30','Chợ đêm Đà Lạt','Ăn nhẹ, mua đồ len và đặc sản.','Chợ đêm Đà Lạt','Buổi tối']]},
+{title:'Trại Mát & đồi thông',stops:[['07:30','Cà phê sáng','Thử cà phê địa phương.','Đà Lạt','Ăn uống'],['09:00','Chùa Linh Phước – Trại Mát','Khám phá kiến trúc khảm sành; kiểm tra tàu du lịch nếu muốn trải nghiệm.','Chùa Linh Phước','Tâm linh'],['12:00','Ăn trưa và nghỉ','Lựa chọn quán trên đường trở lại thành phố.','Trại Mát','Ăn uống'],['14:30','Hồ Tuyền Lâm','Ngắm rừng thông, hồ nước và thư giãn.','Hồ Tuyền Lâm','Thiên nhiên'],['18:30','Lẩu gà lá é','Ăn tối trong trung tâm.','Đà Lạt','Ẩm thực']]},
+{title:'Nông trại cà phê & thư giãn',stops:[['08:00','Tour nông trại cà phê','Chọn nông trại có nhận khách, đặt lịch trước.','Nông trại cà phê Đà Lạt','Trải nghiệm'],['10:30','Vườn hoa / vườn dâu','Chọn địa điểm đang vào mùa, hỏi giá trước.','Đà Lạt','Tham quan'],['12:30','Ăn trưa trung tâm','Dùng bữa trước khi trả phòng.','Đà Lạt','Ăn uống'],['14:00','Mua mứt, trà và quà','Kết thúc hành trình với đặc sản Đà Lạt.','Chợ Đà Lạt','Mua sắm']]}]},
+{id:'da-nang',name:'Đà Nẵng',region:'Miền Trung',emoji:'🌉',color:'#3189b2',center:[16.0544,108.2022],summary:'Mỹ Khê · Sơn Trà · Ngũ Hành Sơn · Bà Nà',note:'Ngày Bà Nà Hills có thể mất trọn ngày; vé, cáp treo và thời tiết cần kiểm tra. Sơn Trà có quy định giao thông trên một số tuyến.',foods:['Mì Quảng','Bún chả cá','Bánh tráng cuốn thịt heo','Hải sản'],days:[
+{title:'Biển Mỹ Khê & trung tâm',stops:[['07:00','Dạo biển Mỹ Khê','Tắm biển ở khu vực có cứu hộ, kiểm tra cờ cảnh báo.','Biển Mỹ Khê','Biển'],['09:00','Ăn mì Quảng','Ăn sáng muộn và nghỉ.','Đà Nẵng','Ăn uống'],['11:00','Bảo tàng Điêu khắc Chăm','Tìm hiểu nghệ thuật Chăm Pa.','Bảo tàng Điêu khắc Chăm','Bảo tàng'],['15:00','Cầu Rồng – cầu Tình Yêu','Dạo ven sông Hàn, chụp ảnh.','Cầu Rồng','Tham quan'],['19:00','Hải sản và sông Hàn về đêm','Lịch phun lửa/nước của cầu Rồng cần xác minh.','Sông Hàn','Buổi tối']]},
+{title:'Bà Nà Hills trọn ngày',stops:[['07:30','Khởi hành đi Bà Nà Hills','Đi sớm để giảm thời gian chờ.','Bà Nà Hills','Di chuyển'],['09:00','Cáp treo – Cầu Vàng','Kiểm tra thời tiết, vé và tuyến cáp treo.','Cầu Vàng Bà Nà','Tham quan'],['12:00','Ăn trưa trên khu du lịch','Chọn buffet/nhà hàng tùy gói vé.','Bà Nà Hills','Ăn uống'],['14:00','Làng Pháp, khu vui chơi','Đi theo thời gian và khả năng hoạt động trong ngày.','Bà Nà Hills','Vui chơi'],['17:00','Về lại trung tâm','Ăn tối và nghỉ ngơi.','Đà Nẵng','Di chuyển']]},
+{title:'Sơn Trà & Ngũ Hành Sơn',stops:[['07:30','Bán đảo Sơn Trà – chùa Linh Ứng','Dạo khu chùa, nhìn toàn cảnh vịnh.','Chùa Linh Ứng Sơn Trà','Tham quan'],['10:30','Cà phê ven biển','Nghỉ chân trước khi đi Nam thành phố.','Biển Mỹ Khê','Cà phê'],['12:00','Bánh tráng cuốn thịt heo','Ăn trưa đặc sản.','Đà Nẵng','Ăn uống'],['14:00','Danh thắng Ngũ Hành Sơn','Leo bậc thang, tham quan hang và chùa; chuẩn bị giày.','Ngũ Hành Sơn','Di sản'],['16:30','Làng đá Non Nước','Mua sắm và kết thúc chuyến đi.','Làng đá Non Nước','Mua sắm']]}]},
+{id:'ninh-binh',name:'Ninh Bình',region:'Miền Bắc',emoji:'🚣',color:'#528264',center:[20.2539,105.9745],summary:'Tràng An · Tam Cốc · Hang Múa · Hoa Lư',note:'Tràng An và Tam Cốc đều là tuyến thuyền dài; đặt mỗi tuyến vào ngày khác. Hang Múa nhiều bậc, nên đi lúc mát và có giày chống trượt.',foods:['Dê núi','Cơm cháy','Miến lươn','Ốc núi'],days:[
+{title:'Tràng An & cố đô Hoa Lư',stops:[['07:30','Ăn sáng tại Ninh Bình','Miến lươn hoặc món địa phương.','Ninh Bình','Ăn uống'],['08:30','Đi thuyền Tràng An','Chọn tuyến theo thời gian và tình hình bến thuyền.','Tràng An','Di sản'],['12:30','Dê núi – cơm cháy','Ăn trưa và nghỉ.','Tràng An','Ăn uống'],['14:30','Cố đô Hoa Lư','Khám phá đền vua Đinh, vua Lê.','Cố đô Hoa Lư','Lịch sử'],['17:00','Về homestay Tam Cốc','Đạp xe nhẹ và nghỉ đêm.','Tam Cốc','Thư giãn']]},
+{title:'Tam Cốc – Bích Động – Hang Múa',stops:[['07:30','Đi thuyền Tam Cốc','Dạo sông Ngô Đồng; nên chọn khung giờ mát.','Tam Cốc','Thiên nhiên'],['11:00','Chùa Bích Động','Tham quan chùa núi gần Tam Cốc.','Chùa Bích Động','Tâm linh'],['12:30','Ăn trưa tại Tam Cốc','Nghỉ trước khi leo núi.','Tam Cốc','Ăn uống'],['15:30','Leo Hang Múa','Khoảng nhiều trăm bậc; không leo khi mưa trơn hoặc quá nắng.','Hang Múa','Ngắm cảnh'],['18:30','Ăn tối đặc sản','Nghỉ đêm gần Tam Cốc.','Tam Cốc','Ẩm thực']]},
+{title:'Vân Long & làng quê',stops:[['08:00','Khu bảo tồn Vân Long','Đi thuyền ngắm đầm và núi đá vôi nếu tuyến hoạt động.','Đầm Vân Long','Thiên nhiên'],['11:30','Ăn trưa tại Gia Viễn','Thưởng thức ẩm thực địa phương.','Gia Viễn','Ăn uống'],['14:00','Đạp xe hoặc cà phê đồng quê','Chọn hoạt động nhẹ trước khi về.','Ninh Bình','Thư giãn'],['16:00','Kết thúc hành trình','Di chuyển tới ga/bến xe theo lịch cá nhân.','Ninh Bình','Kết thúc']]}]},
+{id:'hoi-an',name:'Phố cổ Hội An',region:'Miền Trung',emoji:'🏮',color:'#d58a40',center:[15.8801,108.338],summary:'Phố đèn lồng · Làng rau · Biển An Bàng',note:'Phố cổ đông vào buổi tối. Vé tham quan di tích, hoạt động thả hoa đăng và biểu diễn có quy định/giá riêng. Không xếp Mỹ Sơn vào buổi chiều muộn.',foods:['Cao lầu','Mì Quảng','Cơm gà Hội An','Bánh mì'],days:[
+{title:'Phố cổ & dòng Hoài',stops:[['08:00','Cao lầu Hội An','Ăn sáng đặc sản phố cổ.','Phố cổ Hội An','Ăn uống'],['09:30','Chùa Cầu – nhà cổ Tấn Ký','Đi bộ qua các di tích, mua vé nếu cần.','Chùa Cầu Hội An','Di sản'],['12:00','Cơm gà Hội An','Ăn trưa, nghỉ ngơi tránh nắng.','Hội An','Ăn uống'],['15:30','Hội quán Phúc Kiến & phố đèn lồng','Khám phá kiến trúc và cửa hàng thủ công.','Hội quán Phúc Kiến','Văn hóa'],['19:00','Sông Hoài về đêm','Đi dạo, thưởng thức phố đèn lồng.','Sông Hoài Hội An','Buổi tối']]},
+{title:'Trà Quế & biển An Bàng',stops:[['08:00','Làng rau Trà Quế','Đi xe đạp, tham gia trải nghiệm làm vườn nếu đặt trước.','Làng rau Trà Quế','Trải nghiệm'],['11:00','Bữa trưa món quê','Chọn lớp nấu ăn hoặc nhà hàng gần làng.','Trà Quế','Ăn uống'],['14:00','Biển An Bàng','Nghỉ ngơi và tắm biển nơi có cứu hộ.','Biển An Bàng','Biển'],['17:00','Ngắm chiều bên biển','Cà phê hoặc ăn tối, sau đó về phố cổ.','An Bàng','Thư giãn']]},
+{title:'Làng gốm & mua sắm',stops:[['08:00','Làng gốm Thanh Hà','Tìm hiểu nghề gốm và tham gia trải nghiệm nếu có.','Làng gốm Thanh Hà','Làng nghề'],['11:00','Ăn mì Quảng / bánh mì Hội An','Trở lại trung tâm, ăn trưa.','Hội An','Ăn uống'],['13:30','Mua đèn lồng, đồ thủ công','Chọn quà và dạo các phố nhỏ.','Phố cổ Hội An','Mua sắm'],['15:30','Cà phê ven sông & kết thúc','Thư giãn trước giờ di chuyển.','Hội An','Thư giãn']]}]},
+{id:'thanh-hoa',name:'Thanh Hóa',region:'Miền Bắc Trung Bộ',emoji:'🌾',color:'#60845b',center:[20.453,105.25],summary:'Pù Luông · Ruộng bậc thang · Bản làng',note:'Tuyến 3N2Đ tập trung Pù Luông, không ghép biển Sầm Sơn vì xa và tốn thời gian. Đường vào bản có dốc; thời tiết mưa cần hỏi cơ sở lưu trú về đường đi.',foods:['Vịt Cổ Lũng','Cơm lam','Rau rừng','Thịt nướng bản địa'],days:[
+{title:'Đến Pù Luông – Bản Đôn',stops:[['08:00','Khởi hành đến Pù Luông','Dự trù nhiều giờ lái xe tùy điểm xuất phát.','Pù Luông','Di chuyển'],['12:00','Ăn trưa tại khu lưu trú','Cơm lam, rau rừng hoặc món địa phương.','Bản Đôn Pù Luông','Ăn uống'],['14:30','Đi bộ Bản Đôn','Ngắm ruộng bậc thang, nếp sống bản làng.','Bản Đôn Pù Luông','Trải nghiệm'],['17:00','Ngắm chiều ở thung lũng','Nghỉ tại homestay, ăn tối.','Pù Luông','Thư giãn']]},
+{title:'Bản Hiêu & thác Hiêu',stops:[['07:30','Ăn sáng, ngắm ruộng','Bắt đầu chậm rãi; mùa lúa thay đổi theo thời điểm.','Pù Luông','Thiên nhiên'],['09:00','Di chuyển đến Bản Hiêu','Tuyến đường đồi núi; nên hỏi hướng dẫn địa phương.','Bản Hiêu','Di chuyển'],['10:00','Thác Hiêu','Tham quan khu thác khi an toàn, không xuống nước lúc mưa lũ.','Thác Hiêu','Thiên nhiên'],['12:30','Ăn trưa món bản','Nghỉ ngơi tại khu vực bản.','Bản Hiêu','Ăn uống'],['15:00','Trekking nhẹ cùng hướng dẫn','Chọn quãng đường phù hợp thể lực và thời tiết.','Pù Luông','Trekking']]},
+{title:'Cọn nước & trở về',stops:[['08:00','Thăm cọn nước truyền thống','Tìm hiểu nông nghiệp miền núi, tôn trọng không gian sinh hoạt.','Pù Luông','Văn hóa'],['10:30','Cà phê và mua sản vật','Chọn quà địa phương nếu có.','Pù Luông','Mua sắm'],['12:00','Ăn trưa và trả phòng','Kiểm tra hành lý.','Pù Luông','Ăn uống'],['13:30','Di chuyển về','Dự phòng thời gian do đường miền núi.','Thanh Hóa','Kết thúc']]}]}
+];
+
+</script>
+<script>
+// Chức năng giao diện. Chỉnh dữ liệu chuyến đi trong data.js / destinations.js.
+const byId=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const googleMaps=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+const cityById=id=>destinations.find(c=>c.id===id)||destinations[0];
+const params=new URLSearchParams(location.search);
+let current=cityById(params.get('city'));
+let dayMode='1';
+let leaflet=null,mainMarker=null;
+
+function normalizedDays(city){
+  if(city.id==='phu-quoc')return [1,2,3].map(n=>({
+    title:days[n].title,
+    stops:days[n].stops.map(s=>({time:s[0],name:s[1],desc:s[2],place:s[3]||s[1],address:s[4]||'',price:s[5]||'',type:s[6]||'Tham quan'}))
+  }));
+  return city.days.map(d=>({title:d.title,stops:d.stops.map(s=>({
+    time:s[0],name:s[1],desc:s[2],place:s[3]||s[1],address:s[3]||city.name,price:'',type:s[4]||'Tham quan'
+  }))}));
+}
+function locText(s){return (s.address||s.place)+(current.name==='Phú Quốc'?'':', '+current.name);}
+function hasMappedPlace(s){return s.address||(!/nghỉ|hành lý|ăn sáng tại|ăn trưa trước|kết thúc/i.test(s.place));}
+function setCity(id,{scroll=true}={}){
+  current=cityById(id);
+  try{history.replaceState(null,'',location.pathname+'?city='+encodeURIComponent(current.id));}catch(e){/* Cho phép mở index.html trực tiếp bằng file:// */}
+  byId('qCity').value=current.id;byId('qFoodCity').value=current.id;
+  renderCities();renderItinerary();renderFood();renderMap();
+  if(scroll)byId('itinerary').scrollIntoView({behavior:'smooth'});
+}
+function renderCities(){
+  const query=byId('citySearch').value.trim().toLocaleLowerCase('vi');
+  const region=byId('regionFilter').value;
+  const list=destinations.filter(c=>(region==='all'||c.region===region)&&(!query||(c.name+' '+c.summary).toLocaleLowerCase('vi').includes(query)));
+  byId('cityGrid').innerHTML=list.length?list.map(c=>`
+    <button class="city-card ${c.id===current.id?'selected':''}" style="--tone:${esc(c.color)}" data-city="${esc(c.id)}" aria-label="Chọn lịch trình ${esc(c.name)}">
+      <span class="city-arrow">↗</span><span class="emoji" aria-hidden="true">${c.emoji}</span>
+      <div><span class="region">${esc(c.region)} · 3N2Đ</span><h3>${esc(c.name)}</h3><p>${esc(c.summary)}</p></div>
+    </button>`).join(''):'<div class="empty">Không tìm thấy điểm đến phù hợp. Hãy thử từ khóa khác.</div>';
+  document.querySelectorAll('[data-city]').forEach(b=>b.addEventListener('click',()=>setCity(b.dataset.city)));
+}
+function renderItinerary(){
+  byId('itineraryHeading').textContent='KHÁM PHÁ '+current.name.toLocaleUpperCase('vi');
+  byId('citySummary').textContent=current.summary;
+  byId('selectedCityBar').innerHTML=`<div style="display:flex;align-items:center;gap:18px"><span class="big-icon">${current.emoji}</span><div><span class="subtitle">${esc(current.region)} · LỊCH TRÌNH 3 NGÀY 2 ĐÊM</span><h3>${esc(current.name)}</h3><p>${esc(current.summary)}</p></div></div><button id="mapJump">Xem bản đồ ↗</button>`;
+  byId('mapJump').onclick=()=>byId('map').scrollIntoView({behavior:'smooth'});
+  const d=normalizedDays(current);
+  const indices=dayMode==='all'?[0,1,2]:[Number(dayMode)-1];
+  byId('dayPanels').innerHTML=indices.map(i=>{
+    const day=d[i];
+    return `<div class="day-group"><div class="day-overview"><div class="day-copy"><span class="kicker">NGÀY 0${i+1} · ${day.stops.length} CHẶNG</span><h3>${esc(day.title)}</h3><p>Thời gian và các chặng mang tính gợi ý; có thể chỉnh sửa trong dữ liệu của website.</p></div></div>
+      <div class="timeline">${day.stops.map(s=>`<article class="stop"><div class="time">${esc(s.time)}</div><div><h4>${esc(s.name)}</h4><p>${esc(s.desc)}</p><div class="chips"><span class="chip">${esc(s.type)}</span>${s.price?'<span class="chip">'+esc(s.price)+'</span>':''}</div>${hasMappedPlace(s)?'<a class="loc" href="'+googleMaps(locText(s))+'" target="_blank" rel="noopener noreferrer">📍 '+esc(s.place)+' · Tìm trên bản đồ ↗</a>':''}</div></article>`).join('')}</div></div>`;
+  }).join('');
+  document.querySelectorAll('[data-day]').forEach(b=>{const on=b.dataset.day===dayMode;b.classList.toggle('active',on);b.setAttribute('aria-selected',on)});
+  byId('travelNote').textContent='⚑ Lưu ý hành trình: '+current.note+' Giờ mở cửa, giá vé, phương tiện, điều kiện thời tiết và các điểm dừng cần kiểm tra lại trước khi đi.';
+}
+function classify(s){const t=(s.type+' '+s.name).toLocaleLowerCase('vi');if(/ăn uống|ẩm thực|cà phê|food|buổi tối/.test(t))return'Ăn uống';if(/biển|thiên nhiên|ngắm cảnh|trekking|du thuyền/.test(t))return'Thiên nhiên';return'Tham quan';}
+function renderFood(){
+  const term=byId('foodSearch').value.trim().toLocaleLowerCase('vi');
+  const type=byId('foodType').value;
+  const all=normalizedDays(current).flatMap((d,i)=>d.stops.map(s=>({...s,day:i+1})));
+  const filtered=all.filter(s=>(type==='all'||classify(s)===type)&&(!term||(s.name+' '+s.desc+' '+s.place+' '+s.type).toLocaleLowerCase('vi').includes(term)));
+  byId('foodChips').innerHTML=current.foods.map(f=>'<span>✦ '+esc(f)+'</span>').join('');
+  byId('foodResults').innerHTML=filtered.length?filtered.map(s=>`<article class="result"><span class="kind">NGÀY ${s.day} · ${esc(s.type)}</span><strong>${esc(s.name)}</strong><p>${esc(s.desc)}</p><small>${esc(s.place)}${s.price?' · '+esc(s.price):''}</small><br><a href="${googleMaps(locText(s))}" target="_blank" rel="noopener noreferrer">Tìm địa điểm ↗</a></article>`).join(''):'<div class="empty">Chưa có hoạt động khớp bộ lọc. Thử từ khóa ngắn hơn.</div>';
+}
+function renderMap(){
+  const stops=normalizedDays(current).flatMap(d=>d.stops);
+  const unique=[...new Map(stops.filter(hasMappedPlace).map(s=>[s.place,s])).values()].slice(0,25);
+  byId('mapList').innerHTML=`<div class="map-label">${esc(current.name)} · ${unique.length} ĐỊA ĐIỂM GỢI Ý</div>`+unique.map(s=>`<button data-mapquery="${esc(locText(s))}"><strong>${esc(s.place)}</strong><small>${esc(s.type)} · Mở vị trí trên Google Maps ↗</small></button>`).join('');
+  document.querySelectorAll('[data-mapquery]').forEach(b=>b.addEventListener('click',()=>window.open(googleMaps(b.dataset.mapquery),'_blank','noopener,noreferrer')));
+  if(!window.L){byId('leafletMap').innerHTML='<p style="padding:30px">Không tải được bản đồ trực tuyến. Có thể dùng danh sách địa điểm bên cạnh.</p>';document.body.classList.add('loaded');return;}
+  if(!leaflet){
+    leaflet=L.map('leafletMap',{scrollWheelZoom:false}).setView(current.center,11);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap contributors',maxZoom:18}).addTo(leaflet);
+  }
+  leaflet.closePopup();
+  if(mainMarker)leaflet.removeLayer(mainMarker);
+  leaflet.setView(current.center,current.id==='ha-giang'||current.id==='thanh-hoa'?9:11);
+  mainMarker=L.marker(current.center).addTo(leaflet).bindPopup('<strong>'+esc(current.name)+'</strong><br>Tâm khu vực tham khảo').openPopup();
+  document.body.classList.add('loaded');
+  setTimeout(()=>leaflet.invalidateSize(),150);
+}
+function setMode(route){
+  byId('quickRoute').classList.toggle('hidden',!route);
+  byId('quickFood').classList.toggle('hidden',route);
+  for(const [id,on] of [['routeTab',route],['foodTab',!route]]){byId(id).classList.toggle('active',on);byId(id).setAttribute('aria-selected',on)}
+}
+function setup(){
+  const cityOptions=destinations.map(c=>`<option value="${esc(c.id)}">${c.emoji} ${esc(c.name)}</option>`).join('');
+  byId('qCity').innerHTML=cityOptions;byId('qFoodCity').innerHTML=cityOptions;
+  byId('routeTab').onclick=()=>setMode(true);byId('foodTab').onclick=()=>setMode(false);
+  byId('citySearch').oninput=renderCities;byId('regionFilter').onchange=renderCities;
+  document.querySelectorAll('[data-day]').forEach(b=>b.onclick=()=>{dayMode=b.dataset.day;renderItinerary()});
+  byId('quickRoute').onsubmit=e=>{e.preventDefault();dayMode=byId('qDay').value;setCity(byId('qCity').value)};
+  byId('quickFood').onsubmit=e=>{e.preventDefault();setCity(byId('qFoodCity').value,{scroll:false});byId('foodSearch').value=byId('qSearch').value;renderFood();byId('food').scrollIntoView({behavior:'smooth'})};
+  byId('foodSearch').oninput=renderFood;byId('foodType').onchange=renderFood;
+  byId('clearFilters').onclick=()=>{byId('foodSearch').value='';byId('foodType').value='all';renderFood()};
+  byId('shareBtn').onclick=async()=>{const u=location.href;try{if(navigator.share)await navigator.share({title:document.title,url:u});else{await navigator.clipboard.writeText(u);byId('shareBtn').textContent='Đã sao chép liên kết ✓'}}catch(e){}};
+  setCity(current.id,{scroll:false});
+  document.body.classList.add('js-ready');
+}
+setup();
+
+</script>
+</body>
+</html>
